@@ -1,0 +1,45 @@
+.div1{
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    background-color: black;
+}
+.title{
+    color: white;
+    position: relative;
+    top: 10px;
+}
+.div2{
+    width: 450px;
+    height: 40px;
+    position: relative;
+    left: 38%;
+}
+.td1,.td2{
+    width: 250px;
+}
+.td2{
+    background-color: black;
+    color: white;
+    height: 30px;
+    text-align: center;
+}
+.title1{
+    position: relative;
+    left: 41%;
+}
+.table-head{
+    background-color: green;
+    color: white;
+    height: 40px;
+}
+.table{
+    position: relative;
+    left: 5%;
+    width: 1700px;
+}
+.td1:hover{
+    background-color: black;
+    cursor: pointer;
+    color: white;
+}
