@@ -24,6 +24,7 @@
     fwrite($myfile, "$maps;");
     $imagen=$_POST["Imagen"];
     fwrite($myfile, "$imagen\n");
+    
     echo "<br>The name of the place is: $nombre";
     echo "<br>The description of the place is: $description";
     echo "<br>The municipio of the place is: $municipio";
@@ -73,7 +74,10 @@
     }
     // Mostramos los diferentes campos
     //echo "<br>The description of the place is...$descriptionPlace";
+    
+    
     fclose($myfile);
+
     ?>
     
 
