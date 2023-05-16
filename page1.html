@@ -14,10 +14,10 @@
     <div class="div2">
         <table>
             <td class="td1">Nuevo lugar que visitar</td>
-            <td class="td2" onclick="document.location='./page2.html'">Lugares que no me puedo perder</td>
+            <td class="td2" onclick="document.location='./page2.php'">Lugares que no me puedo perder</td>
         </table>
     </div>
-    <form class="div3" action="get_data.php" method="post">
+    <form class="div3" action="test.php" method="post" enctype="multipart/form-data">
         <h2>Nuevo lugar que visitar</h2>
         <h3>Nombre del lugar:</h3>
         <input type="text" name="Nombre_del_lugar">
@@ -48,12 +48,12 @@
             <option value="Vega de San Mateo">Vega de San Mateo</option>
         </select>
         <h3>URL con mas informacion:</h3>
-        <input type="text" name="informacion">
+        <input type="url" name="informacion">
         <h3>URL con enlace a Google Maps:</h3>
-        <input type="text" name="Google_Maps">
+        <input type="url" name="Google_Maps">
         <h3>Imagen:</h3>
         <input type="text">
-        <input type="file" class="file" name="Imagen"><br><br>
+        <input type="file" id="imagen" name="imagen" accept="imagen/*" style="position: relative; top: -35px;"><br><br>
         <input type="submit" id="btn">
     </form>
 </body>

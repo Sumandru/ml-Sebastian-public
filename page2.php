@@ -8,6 +8,30 @@
     <title>Document</title>
 </head>
 <body>
+<?php
+
+// Open the file. Read mode
+$file = fopen("data1.csv", "r"); 
+
+// New array. One position - One file line
+$places = array();
+
+// Read the file until End Of File
+while(!feof($file)) {
+    // One position of the array - One file
+    // We use explode funtion to separate the fields
+    $places[] = explode(";",fgets($file));
+}
+
+//  DEBUG CODE
+/*
+echo "<pre>";
+print_r($places);
+echo "</pre>";
+*/
+
+
+?>
     <div class="div1">
         <h2 class="title"> <a href="./index.html" style="text-decoration: none; color:white; cursor: pointer;">Descubriendo Gran Canaria</a></h2>
     </div>
@@ -19,42 +43,35 @@
     </div>
     <h2 class="title1">Lugares que no me puedo perder</h2>
     <table class="table">
-        <tr class="table-head">
-            <th>Visitado</th>
-            <th>Nombre del lugar</th>
-            <th>Description</th>
-            <th>Municipio</th>
-            <th>URL con mas information</th>
-            <th>URL de Google Maps</th>
-            <th>Imagen</th>
-        </tr>
-        <tr>
-            <td><input type="checkbox"></td>
-            <td>Playa de Las Canteras</td>
-            <td>La mejor playa de la isla</td>
-            <td>Las Palmas de Gran Canaria</td>
-            <td><a href="https://miplayadelascanteras.com">https://miplayadelascanteras.com</a></td>
-            <td><a href="https://goo.gl/maps/nyKroNfJ1MfViGpm7">https://goo.gl/maps/nyKroNfJ1MfViGpm7</a></td>
-            <td style="text-align: center;"><img src="./page_2/playa de las palmas.jfif" alt="Playa de Las Canteras" width="200px"></td>
-        </tr>
-        <tr>
-            <td><input type="checkbox"></td>
-            <td>Mirador del Anden Verde</td>
-            <td>Un mirador impresionante</td>
-            <td>La Aldea de San Nicolas</td>
-            <td><a href="http://www.grancanaria.com/patronato_turismo/Anden-Verde.28252.0.html">http://www.grancanaria.com/patronato_turismo/Anden-Verde.28252.0.html</a></td>
-            <td><a href="https://goo.gl/maps/nyKroNfJ1MfViGpm7">https://goo.gl/maps/nyKroNfJ1MfViGpm7</a></td>
-            <td style="text-align: center;"><img src="./page_2/mirador-del-balcon-1.jpg" alt="Playa de Las Canteras" width="200px"></td>
-        </tr>
-        <tr>
-            <td><input type="checkbox"></td>
-            <td><?php$nombre=$_POST["Nombre_del_lugar"];echo ":$nombre";?></td>
-            <td><?php$description=$_POST["Descripcion"];echo ":$description";?></td>
-            <td><?php$municipio=$_POST["Municipio"];echo ":$municipio";?></td>
-            <td><?php$information=$_POST["informacion"];echo ":$information";?></td>
-            <td><?php$maps=$_POST["Google_Maps"];echo ":$maps";?></td>
-            <td><?php$imagen=$_POST["Imagen"];echo ":$imagen";?></td>
-        </tr>
+        <thead>
+            <tr class="table-head">
+                <th>Visitado</th>
+                <th>Nombre del lugar</th>
+                <th>Description</th>
+                <th>Municipio</th>
+                <th>URL con mas information</th>
+                <th>URL de Google Maps</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            
+            //Iterate over the $places array
+            //$place will contain one place on every iteration
+            foreach($places as $place){
+                echo "<tr>
+                <td><input type='checkbox' checked='unchecked'></td>
+                <td>$place[0]</td>
+                <td>$place[1]</td>
+                <td>$place[2]</td>
+                <td><a href='$place[3]'>$place[3]</a></td>
+                <td><a href='$place[4]'>$place[4]</a></td>
+                <td><img src='images/".$place[5]."' width='200px'></td>
+                </tr>";
+            }
+            ?>
+        </tbody>
     </table>
 </body>
 </html>
