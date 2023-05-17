@@ -56,7 +56,6 @@ echo "</pre>";
         </thead>
         <tbody>
             <?php
-            
             //Iterate over the $places array
             //$place will contain one place on every iteration
             foreach($places as $place){
@@ -67,7 +66,7 @@ echo "</pre>";
                 <td>$place[2]</td>
                 <td><a href='$place[3]'>$place[3]</a></td>
                 <td><a href='$place[4]'>$place[4]</a></td>
-                <td><img src='images/".$place[5]."' width='200px'></td>
+                <td><a target='_blank' href='images/".$place[5]."' style='text-aling: center;'><img src='images/".$place[5]."' width='200px'></a></td>
                 </tr>";
             }
             ?>

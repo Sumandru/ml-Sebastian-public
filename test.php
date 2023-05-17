@@ -21,6 +21,11 @@
 
 <?php
 
+function validateRequired($fieldvalue){
+    
+}
+
+
 // DEGUB CODE
 /*
 echo "<pre>";
